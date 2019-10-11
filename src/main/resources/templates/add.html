@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <form>
+    What are you drinking?<br>
+    <input type="text" name="name"><br>
+        <input type="text" name="description"><br>
+        <label>
+            <input type="radio" name="rating" value="1" />
+            <span class="icon">★</span>
+        </label>
+        <label>
+            <input type="radio" name="rating" value="2" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+        </label>
+        <label>
+            <input type="radio" name="rating" value="3" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+        </label>
+        <label>
+            <input type="radio" name="rating" value="4" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+        </label>
+        <label>
+            <input type="radio" name="rating" value="5" />
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+            <span class="icon">★</span>
+        </label>
+        <input type="submit" value="Enter">
+
+    </form>
+</body>
+</html>

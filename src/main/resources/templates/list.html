@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+</head>
+<body>
+
+<p th:unless="${drinks} and ${drinks.size()}">no drinks :(</p>
+
+<table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Rating</th>
+
+        </tr>
+
+        <tr th:each="drink : ${drinks}">
+            <td th:text="${drink.name}"></td>
+            <td th:text="${drink.description}"></td>
+            <td th:text="${drink.rating}"></td>
+        </tr>
+    </table>
+</body>
+</html>

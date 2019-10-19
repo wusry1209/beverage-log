@@ -6,42 +6,25 @@
 </head>
 <body>
     <h1 th:text="${title}"></h1>
-    <form>
-    What are you drinking?<br>
-    <input type="text" name="name"><br>
-        <input type="text" name="description"><br>
-        <label>
-            <input type="radio" name="rating" value="1" />
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="rating" value="2" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="rating" value="3" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="rating" value="4" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-        <label>
-            <input type="radio" name="rating" value="5" />
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-            <span class="icon">★</span>
-        </label>
-        <input type="submit" value="Enter">
+    <form method="post" style="max-width:600px;" th:object="${drink}">
+        <div class="form-group">
+            <label th:for="name">Name</label>
+            <input class="form-control" th:field="*{name}" />
+            <span th:errors="*{name}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="description">Description</label>
+            <input class="form-control" th:field="*{description}" />
+            <span th:errors="*{description}" class="error"></span>
+        </div>
 
+        <div class="form-group">
+            <label th:for="rating">Rating</label>
+            <input class="form-control" th:field="*{rating}" />
+            <span th:errors="*{rating}" class="error"></span>
+        </div>
+
+        <input type="submit" value="Add Drink" />
     </form>
 </body>
 </html>

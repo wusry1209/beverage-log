@@ -43,7 +43,7 @@ public class DrinkController {
 
     @RequestMapping(value = "list", method = RequestMethod.GET)
     public  String list(Model model){
-        model.addAttribute("drink", drinkDao.findAll());
+        model.addAttribute("drinks", drinkDao.findAll());
         model.addAttribute("title", "Your Drinks");
         return "list";
     }

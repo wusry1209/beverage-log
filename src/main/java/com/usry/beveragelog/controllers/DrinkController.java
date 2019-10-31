@@ -2,6 +2,7 @@ package com.usry.beveragelog.controllers;
 
 import com.usry.beveragelog.forms.Drink;
 import com.usry.beveragelog.models.DrinkDao;
+import com.usry.beveragelog.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,5 +47,13 @@ public class DrinkController {
         model.addAttribute("drinks", drinkDao.findAll());
         model.addAttribute("title", "Your Drinks");
         return "list";
+    }
+
+    //register
+    @RequestMapping(value = "register", method = RequestMethod.GET)
+    public String displayRegisterForm(Model model) {
+        model.addAttribute("title","Login");
+
+        return "Login";
     }
 }

@@ -1,7 +1,17 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+	}
+}
+
 plugins {
 	id 'org.springframework.boot' version '2.2.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id 'eclipse'
 }
 group = 'com.usry'
 version = '0.0.1-SNAPSHOT'
@@ -17,6 +27,7 @@ repositories {
 	mavenCentral()
 }
 
+
 dependencyManagement {
 	imports {
 		mavenBom 'org.springframework.session:spring-session-bom:Bean-SR8'
@@ -25,6 +36,8 @@ dependencyManagement {
 
 bootJar {
 	baseName = 'gs-securing-web'
+	version =  '0.1.0'
+	baseName = 'gs-uploading-files'
 	version =  '0.1.0'
 }
 

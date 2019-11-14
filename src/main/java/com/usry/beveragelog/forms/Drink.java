@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.File;
 
 
 @Entity
@@ -18,13 +19,15 @@ public class Drink {
     private String name;
     private String description;
     private int rating;
+    private File file;
 
 
-    public Drink(String name, String description, Integer rating) {
+    public Drink(String name, String description, Integer rating, File file) {
         this();
         this.name = name;
         this.description = description;
         this.rating = rating;
+        this.file = file;
     }
 
     public Drink() {
@@ -33,6 +36,14 @@ public class Drink {
 
     public int getId() {
         return id;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setPicture(File file) {
+        this.file = file;
     }
 
     public String getName() {

@@ -42,7 +42,7 @@ public class Drink {
         return file;
     }
 
-    public void setPicture(File file) {
+    public void setFile(File file) {
         this.file = file;
     }
 

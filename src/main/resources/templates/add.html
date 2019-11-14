@@ -24,11 +24,10 @@
             <span th:errors="*{rating}" class="error"></span>
         </div>
 
-        <table>
-            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-
-        </table>
-
+        <div class="form-group">
+            <label th:for="file">Image Upload</label>
+            <input type="file" name="file" th:field="*{file}"/>
+        </div>
         <input type="submit" value="Add Drink" />
     </form>
 

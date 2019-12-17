@@ -1,9 +1,7 @@
 package com.usry.beveragelog.forms;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.File;
@@ -19,32 +17,37 @@ public class Drink {
     private String name;
     private String description;
     private int rating;
-    private File file;
+
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] foto;
 
 
-    public Drink(String name, String description, Integer rating, File file) {
+    public Drink(String name, String description, Integer rating, byte[] foto) {
         this();
         this.name = name;
         this.description = description;
         this.rating = rating;
-        this.file = file;
+        this.foto = foto;
     }
 
     public Drink() {
 
     }
 
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
+    }
+
     public int getId() {
         return id;
     }
 
-    public File getFile() {
-        return file;
-    }
 
-    public void setFile(File file) {
-        this.file = file;
-    }
 
     public String getName() {
         return name;

@@ -21,7 +21,7 @@
             <td th:text="${drink.name}"></td>
             <td th:text="${drink.description}"></td>
             <td th:text="${drink.rating}"></td>
-            <td th:text="${drink.file}"></td>
+            <td><img th:src="*{'/img/' + drink.foto}"></td>
         </tr>
     </table>
 </body>

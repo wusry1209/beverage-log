@@ -9,27 +9,27 @@
 </head>
 <body>
     <h1 th:text="${title}"></h1>
-    <form method="post" style="max-width:600px;" th:object="${drink}">
+    <form method="post" style="max-width:600px;" enctype="multipart/form-data">
         <div class="form-group">
             <label th:for="name">Name</label>
-            <input class="form-control" th:field="*{name}" />
-            <span th:errors="*{name}" class="error"></span>
+            <input class="form-control" type="text" name="name" id="name"/>
+<!--            <span th:errors="*{name}" class="error"></span>-->
         </div>
         <div class="form-group">
             <label th:for="description">Description</label>
-            <input class="form-control" th:field="*{description}" />
-            <span th:errors="*{description}" class="error"></span>
+            <input class="form-control" type="text" name="description" id="description"/>
+<!--            <span th:errors="*{description}" class="error"></span>-->
         </div>
 
         <div class="form-group">
             <label th:for="rating">Rating</label>
-            <input class="form-control" th:field="*{rating}" />
-            <span th:errors="*{rating}" class="error"></span>
+            <input class="form-control" type="text" name="rating" id="rating" />
+<!--            <span th:errors="*{rating}" class="error"></span>-->
         </div>
 
         <div class="form-group">
             <label th:for="file">Image Upload</label>
-            <input type="file" name="photo" th:field="*{foto}"/>
+            <input type="file" name="foto" id="foto"/>
         </div>
         <input type="submit" value="Add Drink" />
     </form>

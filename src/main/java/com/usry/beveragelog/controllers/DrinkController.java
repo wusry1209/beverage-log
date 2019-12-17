@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.awt.*;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 
 @Controller
@@ -37,7 +39,8 @@ public class DrinkController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddDrinkForm(@ModelAttribute @Valid Drink newDrink) {
+    public String processAddDrinkForm(@RequestParam(value="name") String name, @RequestParam(value="description") String description, @RequestParam(value="rating") int rating, @RequestParam(value="foto") MultipartFile foto) throws IOException {
+        Drink newDrink = new Drink(name, description, rating, foto.getBytes());
         drinkDao.save(newDrink);
         return "redirect:";
     }

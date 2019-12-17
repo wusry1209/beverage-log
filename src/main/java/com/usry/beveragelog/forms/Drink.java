@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.File;
+import java.util.Base64;
 
 
 @Entity
@@ -33,6 +34,11 @@ public class Drink {
 
     public Drink() {
 
+    }
+
+    public String getImageString(){
+        String s = Base64.getEncoder().encodeToString(foto);
+        return s;
     }
 
     public byte[] getFoto() {
